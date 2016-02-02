@@ -172,7 +172,7 @@ class MobileBackend extends \Phalcon\DI\Injectable implements \Phalcon\DI\Inject
     {
         $url = "https://" . $this->getDomain() . $this->getEndPoint();
 
-        if ($this->isQuery())
+        if ($this->isQuery() && $this->getMethod() === "GET")
             $url .= "?". $this->getQuery();
 
         return $url;
@@ -228,6 +228,14 @@ class MobileBackend extends \Phalcon\DI\Injectable implements \Phalcon\DI\Inject
     public function getQuery()
     {
         return http_build_query(["where" => json_encode($this->query)]);
+    }
+
+    /**
+     * @return string
+     */
+    public function getPostQuery()
+    {
+        return json_encode($this->query);
     }
 
     /**
@@ -321,7 +329,7 @@ class MobileBackend extends \Phalcon\DI\Injectable implements \Phalcon\DI\Inject
             self::SIGNATURE_STRING,
             $this->getApplicationKey(),
             $this->getTimeStamp(),
-            $this->isQuery() ? "&".$this->getQuery() : ""
+            ($this->isQuery() && $this->getMethod() === "GET") ? "&".$this->getQuery() : ""
         );
 
         $signature = hash_hmac('sha256', $signature_string, $this->getClientKey(), true);
@@ -345,6 +353,11 @@ class MobileBackend extends \Phalcon\DI\Injectable implements \Phalcon\DI\Inject
             ->addOptions(CURLOPT_CUSTOMREQUEST, $this->getMethod())
             ->addHeaderSignature()
             ->addOptions(CURLOPT_HTTPHEADER, $this->getHeader());
+
+        if ($this->getMethod() === "POST" || $this->getMethod() === "PUT") {
+            curl_setopt($curl, CURLOPT_POSTFIELDS, $this->getPostQuery());
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        }
 
         // option set
         curl_setopt_array($curl, $this->getOptions());
