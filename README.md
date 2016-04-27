@@ -11,6 +11,15 @@ http://mb.cloud.nifty.com/doc/current/rest/common/format.html
 * PHP 5.x
 * Phalcon 1.x, 2.x
 
+# Composer
+
+```
+{
+    "require": {
+       "mobile-backend/phalcon": "*"
+    }
+}
+```
 
 # YAML
 
