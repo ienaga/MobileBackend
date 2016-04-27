@@ -1,10 +1,15 @@
 MobileBackend php-sdk for Phalcon
 =======
 
+[![Latest Stable Version](https://poser.pugx.org/mobile-backend/phalcon/v/stable)](https://packagist.org/packages/mobile-backend/phalcon) [![Total Downloads](https://poser.pugx.org/mobile-backend/phalcon/downloads)](https://packagist.org/packages/mobile-backend/phalcon) [![Latest Unstable Version](https://poser.pugx.org/mobile-backend/phalcon/v/unstable)](https://packagist.org/packages/mobile-backend/phalcon) [![License](https://poser.pugx.org/mobile-backend/phalcon/license)](https://packagist.org/packages/mobile-backend/phalcon)
 
 # Doc
 
 http://mb.cloud.nifty.com/doc/current/rest/common/format.html
+
+# commentary
+
+http://qiita.com/ienaga/items/a97a318c833082150980
 
 
 # Environment
@@ -95,8 +100,3 @@ $mobileBackend
     ->setEndPoint("push/" . $objectId)
     ->execute();
 ```
-
-# commentary
-
-http://qiita.com/ienaga/items/a97a318c833082150980
-
