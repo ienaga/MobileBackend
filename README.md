@@ -1,8 +1,9 @@
-MobileBackend for PHP
+MobileBackend php-sdk for Phalcon
 =======
 
 
 # Doc
+
 http://mb.cloud.nifty.com/doc/current/rest/common/format.html
 
 
@@ -13,7 +14,7 @@ http://mb.cloud.nifty.com/doc/current/rest/common/format.html
 
 # Composer
 
-```
+```javascript
 {
     "require": {
        "mobile-backend/phalcon": "*"
@@ -25,7 +26,7 @@ http://mb.cloud.nifty.com/doc/current/rest/common/format.html
 
 ## YAML
 
-```
+```yaml
 prd:
   nifty:
     domain: mb.api.cloud.nifty.com
@@ -36,7 +37,7 @@ prd:
 
 ## GET
 
-```
+```php
 $mobileBackend = new MobileBackend();
 $json = $mobileBackend
     ->setMethod("GET")
@@ -47,7 +48,7 @@ $json = $mobileBackend
 
 ## POST
 
-```
+```php
 // message
 $message = "A Happy New Year!!";
 
@@ -70,7 +71,7 @@ $mobileBackend
 
 ## PUT
 
-```
+```php
 // message
 $message = "Edit Message";
 
@@ -87,7 +88,7 @@ $mobileBackend
 
 ## DELETE
 
-```
+```php
 $mobileBackend = new \MobileBackend\Phalcon\MobileBackend();
 $mobileBackend
     ->setMethod("DELETE")
