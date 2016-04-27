@@ -1,5 +1,7 @@
 <?php
 
+namespace MobileBackend\Phalcon;
+
 class MobileBackend extends \Phalcon\DI\Injectable implements \Phalcon\DI\InjectionAwareInterface
 {
 

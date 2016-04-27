@@ -1,0 +1,17 @@
+{
+    "name": "mobile-backend/phalcon",
+    "homepage": "https://github.com/ienaga/MobileBackend",
+    "description": "mobile backend php-sdk for phalcon",
+    "type": "library",
+    "license": "MIT",
+    "authors":[
+        { 
+            "name":"Toshiyuki Ienaga", 
+            "email":"ienaga@tvon.jp" 
+        }
+    ],
+    "autoload": {
+        "psr-0": { "MobileBackend\\Phalcon\\": "" }
+    },
+    "target-dir": "MobileBackend/Phalcon"
+}
