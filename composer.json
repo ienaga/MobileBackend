@@ -6,12 +6,17 @@
     "license": "MIT",
     "authors":[
         { 
-            "name":"Toshiyuki Ienaga", 
-            "email":"ienaga@tvon.jp" 
+            "name": "Toshiyuki Ienaga", 
+            "email": "ienaga@tvon.jp" 
         }
     ],
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    },
     "autoload": {
-        "psr-0": { "MobileBackend\\Phalcon\\": "" }
+        "psr-0": { 
+            "MobileBackend\\Phalcon\\": "" 
+        }
     },
     "target-dir": "MobileBackend/Phalcon"
 }
