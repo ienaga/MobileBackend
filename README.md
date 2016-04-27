@@ -2,11 +2,11 @@ MobileBackend for PHP
 =======
 
 
-## Doc
+# Doc
 http://mb.cloud.nifty.com/doc/current/rest/common/format.html
 
 
-## Environment
+# Environment
 
 * PHP 5.x
 * Phalcon 1.x, 2.x
@@ -21,7 +21,9 @@ http://mb.cloud.nifty.com/doc/current/rest/common/format.html
 }
 ```
 
-# YAML
+# Usage
+
+## YAML
 
 ```
 prd:
@@ -31,9 +33,6 @@ prd:
     application_key: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
     client_key: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
-
-
-# Usage
 
 ## GET
 
