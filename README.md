@@ -26,6 +26,8 @@ prd:
 
 # Usage
 
+## GET
+
 ```
 $mobileBackend = new MobileBackend();
 $json = $mobileBackend
@@ -35,6 +37,55 @@ $json = $mobileBackend
     ->execute();
 ```
 
+## POST
+
+```
+// message
+$message = "A Happy New Year!!";
+
+// send time
+$dateTime = new DateTime("2016-01-01 00:00:00");
+$dateTime->setTimeZone(new DateTimeZone("UTC"));
+$deliveryTime = $dateTime->format("Y-m-d\TH:i:s.\0\0\0\Z");
+
+$mobileBackend = new \MobileBackend\Phalcon\MobileBackend();
+$mobileBackend
+    ->setMethod("POST")
+    ->addQuery("message", $message)
+    ->addQuery("deliveryTime", [
+        "__type" => "Date",
+        "iso" => $deliveryTime
+    ])
+    ->setEndPoint("push")
+    ->execute();
+```
+
+## PUT
+
+```
+// message
+$message = "Edit Message";
+
+// objectId
+$objectId = "Edit Push Message ObjectId";
+
+$mobileBackend = new \MobileBackend\Phalcon\MobileBackend();
+$mobileBackend
+    ->setMethod("PUT")
+    ->addQuery("message", $message)
+    ->setEndPoint("push/". $objectId)
+    ->execute();
+```
+
+## DELETE
+
+```
+$mobileBackend = new \MobileBackend\Phalcon\MobileBackend();
+$mobileBackend
+    ->setMethod("DELETE")
+    ->setEndPoint("push/" . $objectId)
+    ->execute();
+```
 
 # commentary
 
