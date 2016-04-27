@@ -2,6 +2,7 @@
     "name": "mobile-backend/phalcon",
     "homepage": "https://github.com/ienaga/MobileBackend",
     "description": "mobile backend php-sdk for phalcon",
+    "keywords": ["mobilebackend", "phalcon"],
     "type": "library",
     "license": "MIT",
     "authors":[
