@@ -68,9 +68,11 @@ class MobileBackend extends \Phalcon\DI\Injectable implements \Phalcon\DI\Inject
 
 
     /**
-     *  __construct
+     * MobileBackend constructor.
+     * @param string|null $client_key
+     * @param string|null $application_key
      */
-    public function __construct()
+    public function __construct($client_key = null, $application_key = null)
     {
         // config
         $config = $this->getDI()->get('config')->get('nifty');
@@ -82,10 +84,16 @@ class MobileBackend extends \Phalcon\DI\Injectable implements \Phalcon\DI\Inject
         $this->setVersion($config->get('version'));
 
         // client key
-        $this->setClientKey($config->get('client_key'));
+        if (!$client_key) {
+            $client_key = $config->get('client_key');
+        }
+        $this->setClientKey($client_key);
 
         // application key
-        $this->setApplicationKey($config->get('application_key'));
+        if (!$application_key) {
+            $application_key = $config->get('application_key');
+        }
+        $this->setApplicationKey($application_key);
 
         // time stamp
         $this->setTimeStamp(date('c'));
